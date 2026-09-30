@@ -1,5 +1,6 @@
 classdef ModelData
     % MODELDATA Input data for demopackage.runModel
+    % 
     %   data = demopackage.ModelData(x, y, z, element_indices, intensity)
     %   data = demopackage.ModelData(..., multiplier=2)
     %

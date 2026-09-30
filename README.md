@@ -133,6 +133,42 @@ choose to link it to this GitHub repository, and select GitHub Releases as the
 source. File Exchange then picks up each new release, and users can install the
 toolbox from the Add-On Explorer in MATLAB.
 
+## Documentation
+
+The documentation is built using [Sphinx] and [Google style], with the [`sphinx-matlabdomain`
+extension]. It uses [`autodoc`specification] to indicate what needs to be included 
+in the documentation. It works exactly the same than in Python, but comments should start with `%`:
+
+```python
+"""This is a docstring in Python.
+
+Args:
+    arg1 (str): With arguments.
+
+Returns:
+    And output information.
+"""
+```
+
+```matlab
+% This is the same in Matlab.
+%
+% Args:
+%    arg1 (str): With arguments.
+%
+% Returns:
+%   (str) And output information.
+"""
+```
+
+To build the documentation, run:
+
+```bash
+sphinx-build -b html docs build/html
+```
+
+Then, open `build/html/index.html` in your browser.
+
 [releases]: https://github.com/Aurashk/MatabToolingDemoDeployed/releases/latest
 [file-exchange]: https://www.mathworks.com/matlabcentral/fileexchange/
 [mh_style]: https://florianschanda.github.io/miss_hit/style_checker.html
@@ -140,3 +176,7 @@ toolbox from the Add-On Explorer in MATLAB.
 [pre-commit]: https://pre-commit.com/
 [matlab-unittest]: https://uk.mathworks.com/help/matlab/matlab-unit-test-framework.html
 [coverage-plugin]: https://uk.mathworks.com/help/matlab/ref/matlab.unittest.plugins.codecoverageplugin-class.html
+[Sphinx]: https://www.sphinx-doc.org/en/master/
+[`autodoc` specification]: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
+[Google style]: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
+[`sphinx-matlabdomain` extension]: https://github.com/sphinx-contrib/matlabdomain
